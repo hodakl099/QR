@@ -3,33 +3,32 @@ import { useNavigate } from "react-router-dom";
 import { Button, Img, Line, RatingBar, Text } from "components";
 import Footer from "components/Footer";
 import { useTranslation } from 'react-i18next';
-import { Category } from '/pages/Menu/models/models';
-import { fetchSubCategoriesByCategory } from "pages/Menu/models/api";
+import { SubCategory } from '../../models/models';
+import { fetchSubCategoriesByCategory } from "../../models/api";
+import { useParams } from 'react-router-dom';
 
 const SubMenu = () => {
+
+  const [subCategories, setSubCategories] = useState([]);
+  const { categoryId } = useParams();
+
   const navigate = useNavigate();
   
   const { t } = useTranslation();
 
-  const restaurantId = 1;
-  const [categories, setCategories] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchSubCategoriesByCategory(restaurantId);
-        const data = response.data.map(
-          cat => new Category(cat.id, cat.name, cat.imageUrl, cat.objectName, cat.subCategories, cat.restaurantId)
-        );
-        setCategories(data);
+        const response = await fetchSubCategoriesByCategory(2);
+        // Map the response to your model (if you are using one)
+        setSubCategories(response.data);
       } catch (error) {
         console.error('An error occurred while fetching data:', error);
       }
     };
-
-    fetchData();
-  }, [restaurantId]);
   
+    fetchData();
+  }, [categoryId]);
  
   return (
     <>
@@ -83,12 +82,12 @@ const SubMenu = () => {
               <div className="flex flex-col gap-12 items-center justify-start w-full">
                 <div className="flex flex-col items-center justify-start rounded-[40px] w-full">
                   <div className="md:gap-5 gap-[35px] grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
-                  {categories.map((category) => (
-    <div className="bg-white-A700 flex flex-1 flex-col gap-6 items-center justify-center p-[30px] sm:px-5 rounded-[40px] w-full" key={category.id}>
+                  {subCategories.map((subCategory) => (
+    <div className="bg-white-A700 flex flex-1 flex-col gap-6 items-center justify-center p-[30px] sm:px-5 rounded-[40px] w-full" key={subCategories.id}>
       <Img
         className="h-[270px] md:h-auto mt-1.5 object-cover w-[270px]"
-        src={category.imageUrl}
-        alt={category.name}
+        src={subCategory.imageUrl}
+        alt={subCategory.name}
       />
       <div className="flex flex-col items-center justify-end mb-1.5 pt-[17px] w-full">
         <div className="flex flex-col gap-[18px] items-center justify-start w-full">
@@ -96,7 +95,7 @@ const SubMenu = () => {
             className="text-3xl sm:text-[26px] md:text-[28px] text-gray-900"
             size="txtPoppinsSemiBold30"
           >
-            {category.name}
+            {subCategory.name + subCategory.price}
           </Text>
         </div>
         <div className="flex flex-row items-center justify-center mt-3.5 rounded-[1.76px] w-[49%] md:w-full">
@@ -161,4 +160,4 @@ const SubMenu = () => {
   );
 };
 
-export default MenuPage;
+export default SubMenu;

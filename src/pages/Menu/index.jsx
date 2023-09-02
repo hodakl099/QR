@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Button, Img, Line, RatingBar, Text } from "components";
 import Footer from "components/Footer";
 import { useTranslation } from 'react-i18next';
-import { Category } from './models/models';
-import { fetchCategoriesByRestaurant } from "./models/api";
+import { Category } from '../../models/models';
+import { fetchCategoriesByRestaurant } from "../../models/api";
 
 const MenuPage = () => {
   const navigate = useNavigate();
@@ -111,7 +111,7 @@ const MenuPage = () => {
         <div className="flex flex-row gap-[10px] items-center justify-center mt-[30px] rounded-lg w-[95%] md:w-full">
           <Button
             className="common-pointer bg-red-400 cursor-pointer font-semibold min-w-[158px] py-[19px] rounded-lg text-base text-center text-white-A700"
-            onClick={() => navigate("/checkout")}
+            onClick={() => navigate("/submenu/${category.id}")}
           >
             {t('More.more')}
           </Button>
