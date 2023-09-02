@@ -18,9 +18,16 @@ i18n
           },
           Contact: {
             contact:  "Contact Us"
-          }
+          },
+          Contact: {
+            Menu:  "Our Popular Menu"
+          },
+          More: {
+            more:  "See More."
+          },
         }
       },
+     
       ar: {
         translation: {
           Home: {
@@ -28,6 +35,13 @@ i18n
           },
           Contact: {
             contact: "تواصل معانا"
+          },
+         
+          Menu: {
+            menu: "قائمتنا"
+          },
+          More: {
+            more: "المزيد"
           } 
         }
       }

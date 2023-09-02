@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Button, Img, Line, RatingBar, Text } from "components";
 import Footer from "components/Footer";
 import { useTranslation } from 'react-i18next';
-import { Category } from './models/models';
-import { fetchCategoriesByRestaurant } from "./models/api";
+import { Category } from '/pages/Menu/models/models';
+import { fetchSubCategoriesByCategory } from "pages/Menu/models/api";
 
-const MenuPage = () => {
+const SubMenu = () => {
   const navigate = useNavigate();
   
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ const MenuPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchCategoriesByRestaurant(restaurantId);
+        const response = await fetchSubCategoriesByCategory(restaurantId);
         const data = response.data.map(
           cat => new Category(cat.id, cat.name, cat.imageUrl, cat.objectName, cat.subCategories, cat.restaurantId)
         );
@@ -50,7 +50,7 @@ const MenuPage = () => {
                 <Text
                   className="common-pointer text-base text-gray-900_cc"
                   size="txtOpenSansRomanRegular16Gray900cc"
-                  onClick={() => navigate("/submenu")}
+                  onClick={() => navigate("/contact")}
                 >
                   {t('Contact.contact')}
                 </Text>

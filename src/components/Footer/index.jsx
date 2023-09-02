@@ -150,26 +150,33 @@ const Footer = (props) => {
               </Text>
             </div>
           </div>
-          <div className="flex flex-row items-start justify-center w-[23%] md:w-full">
-            <Text
-              className="mt-1 text-gray-301 text-xl"
-              size="txtPoppinsRegular20Gray301"
-            >
-              Copyright
-            </Text>
-            <Text
-              className="border-[1.5px] border-gray-301 border-solid flex h-[19px] items-center justify-center ml-[5px] mt-1 rounded-[50%] text-center text-gray-301 text-sm w-[19px]"
-              size="txtPoppinsRegular14Gray301"
-            >
-              c
-            </Text>
-            <Text
-              className="ml-[5px] text-gray-301 text-xl"
-              size="txtPoppinsRegular20Gray301"
-            >
-              2022 Foodio
-            </Text>
-          </div>
+          <div className="flex flex-row items-center justify-center w-[23%] md:w-full">
+  <Text
+    className="text-gray-301 text-xl"
+    size="txtPoppinsRegular20Gray301"
+  >
+    2023
+  </Text>
+  <Text
+    className="ml-[5px] text-gray-301 text-xl"
+    size="txtPoppinsRegular20Gray301"
+  >
+    TajMedia
+  </Text>
+  <Text
+    className="ml-[5px] text-gray-301 text-sm border-[1.5px] border-gray-301 border-solid rounded-[50%] h-[19px] w-[19px] items-center justify-center"
+    size="txtPoppinsRegular14Gray301"
+  >
+    c
+  </Text>
+  <Text
+    className="ml-[5px] text-gray-301 text-xl"
+    size="txtPoppinsRegular20Gray301"
+  >
+    All Rights Reserved
+  </Text>
+</div>
+
         </div>
       </footer>
     </>

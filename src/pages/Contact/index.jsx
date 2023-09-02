@@ -110,8 +110,8 @@ const ContactPage = () => {
                   className="bg-white-A700 border border-gray-400 border-solid leading-[normal] pb-[35px] pl-6 pr-[35px] pt-[30px] sm:px-5 rounded-lg text-base placeholder:text-gray-500 text-gray-500 text-left w-full"
                   name="Massage"
                   placeholder="Message"
-                  name="Massage"
-                  placeholder="Message"
+                  // name="Massage"
+                  // placeholder="Message"
                 ></TextArea>
               </div>
               <Button className="bg-red-400 cursor-pointer min-w-[540px] sm:min-w-full py-[26px] rounded-[12px] sm:text-[21px] md:text-[23px] text-[25px] text-center text-white-A700">
