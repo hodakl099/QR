@@ -19,7 +19,7 @@ const SubMenu = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchSubCategoriesByCategory(2);
+        const response = await fetchSubCategoriesByCategory(categoryId);
         // Map the response to your model (if you are using one)
         setSubCategories(response.data);
       } catch (error) {
