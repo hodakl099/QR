@@ -1,23 +1,20 @@
 import React from "react";
-
 import { useNavigate } from "react-router-dom";
-
 import { Button, Img, Input, Line, Text, TextArea } from "components";
 import Footer from "components/Footer";
+import { useTranslation } from 'react-i18next';
 
 const ContactPage = () => {
   const navigate = useNavigate();
+
+    
+  const { t } = useTranslation();
 
   return (
     <>
       <div className="bg-gray-50 flex flex-col font-poppins sm:gap-10 md:gap-10 gap-[120px] items-center justify-end mx-auto pt-[51px] w-full">
         <div className="flex flex-col items-center justify-start max-w-[1112px] mx-auto md:px-5 w-full">
           <div className="flex md:flex-col flex-row md:gap-5 items-start justify-start w-full">
-            <Img
-              className="h-[51px] w-[12%]"
-              src="images/img_logo.svg"
-              alt="Logo"
-            />
             <div className="flex md:flex-1 sm:flex-col flex-row font-opensans sm:gap-5 items-start justify-center md:ml-[0] ml-[107px] md:mt-0 mt-2.5 pt-0.5 w-[52%] md:w-full">
               <div className="flex flex-col items-center justify-start ml-8 sm:ml-[0]">
                 <Text
@@ -25,7 +22,7 @@ const ContactPage = () => {
                   size="txtOpenSansRomanRegular16Gray900cc"
                   onClick={() => navigate("/")}
                 >
-                  Menu
+                  {t('Home.home')}
                 </Text>
               </div>
               <div className="flex flex-col gap-1.5 items-start justify-start sm:ml-[0] ml-[31px] w-[14%] sm:w-full">
@@ -33,12 +30,12 @@ const ContactPage = () => {
                   className="text-base text-gray-900_cc"
                   size="txtOpenSansRomanRegular16Gray900cc"
                 >
-                  Contact us
+                  {t('Contact.contact')}
                 </Text>
                 <Line className="bg-red-400 h-px w-[58%]" />
               </div>
             </div>
-            <Button
+            {/* <Button
               className="bg-white-A700 cursor-pointer flex h-[50px] items-center justify-center md:ml-[0] ml-[122px] rounded-[50%] w-[50px]"
               leftIcon={
                 <Img
@@ -47,10 +44,12 @@ const ContactPage = () => {
                   alt="cart"
                 />
               }
-            ></Button>
-            <Button className="bg-red-400 cursor-pointer font-semibold leading-[normal] min-w-[112px] md:ml-[0] ml-[25px] py-3.5 rounded-[16px] text-center text-sm text-white-A700">
-              Log in
-            </Button>
+            ></Button> */}
+            <Img
+              className="h-[51px] w-[12%]"
+              src="images/img_logo.svg"
+              alt="Logo"
+            />
           </div>
           <div className="flex flex-col gap-[19px] items-center justify-start mt-[117px]">
             <Text

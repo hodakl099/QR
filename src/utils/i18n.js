@@ -14,15 +14,21 @@ i18n
       en: {
         translation: {
           Home: {
-            hello: "Hello World!"
+            home: "Home"
+          },
+          Contact: {
+            contact:  "Contact Us"
           }
         }
       },
       ar: {
         translation: {
           Home: {
-            hello: "يسسسس"
-          }
+            home: "الرئيسة"
+          },
+          Contact: {
+            contact: "تواصل معانا"
+          } 
         }
       }
     }
