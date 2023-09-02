@@ -1,12 +1,34 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Img, Line, RatingBar, Text } from "components";
 import Footer from "components/Footer";
 import { useTranslation } from 'react-i18next';
+import { Category } from './models';
+import { fetchCategoriesByRestaurant } from "models/api";
+
 const MenuPage = () => {
   const navigate = useNavigate();
   
   const { t } = useTranslation();
+
+  const restaurantId = 1;
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchCategoriesByRestaurant(restaurantId);
+        const data = response.data.map(
+          cat => new Category(cat.id, cat.name, cat.imageUrl, cat.objectName, cat.subCategories, cat.restaurantId)
+        );
+        setCategories(data);
+      } catch (error) {
+        console.error('An error occurred while fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [restaurantId]);
   
  
   return (
@@ -81,6 +103,20 @@ const MenuPage = () => {
               <div className="flex flex-col gap-12 items-center justify-start w-full">
                 <div className="flex flex-col items-center justify-start rounded-[40px] w-full">
                   <div className="md:gap-5 gap-[35px] grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
+                     <div className="flex flex-col font-poppins gap-[50px] items-center justify-start w-full">
+        <div className="flex sm:flex-col flex-row gap-7 items-center justify-between rounded-[16px] w-full">
+          {/* Dynamically render category buttons */}
+          {categories.map((category) => (
+            <Button
+              key={category.id}
+              className="bg-gray-400_63 cursor-pointer min-w-[192px] py-[27px] rounded-[16px] text-center text-gray-900 text-xl"
+            >
+              {category.name}
+            </Button>
+          ))}
+        </div>
+        {/* ...Existing Code for displaying menu items... */}
+      </div>
                     <div className="bg-white-A700 flex flex-1 flex-col gap-6 items-center justify-center p-[30px] sm:px-5 rounded-[40px] w-full">
                       <Img
                         className="h-[270px] md:h-auto mt-1.5 object-cover w-[270px]"

@@ -2,6 +2,9 @@
   box-sizing: border-box;
   line-height: normal;
 }
+html[lang="ar"] {
+  direction: rtl;
+}
 body {
   font-family: "Roboto", sans-serif !important;
   margin: 0;
