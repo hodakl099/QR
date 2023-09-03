@@ -12,7 +12,7 @@ const ProjectRoutes = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Menu />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/submenu/:categoryId" element={<SubMenu />} />
+          <Route path="/submenu/:categoryId/:catName" element={<SubMenu />} />
         </Routes>
       </Router>
     </React.Suspense>

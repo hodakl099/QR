@@ -11,15 +11,13 @@ import { data } from "autoprefixer";
 const SubMenu = () => {
 
   const [subCategories, setSubCategories] = useState([]);
-  const { categoryId } = useParams();
+  const { categoryId,catName } = useParams();
 
   const navigate = useNavigate();
   
   const { t } = useTranslation();
 
   useEffect(() => {
-
-    console.log('Category ID :',categoryId);
     const fetchData = async () => {
       try {
         const response = await fetchSubCategoriesByCategory(categoryId);
@@ -82,7 +80,7 @@ const SubMenu = () => {
               className="sm:text-[38px] md:text-[44px] text-[52px] text-gray-900"
               size="txtOpenSansRomanBold52"
             >
-              {t('Menu.menu')}
+              {catName}
             </Text>
             <div className="flex flex-col font-poppins gap-[50px] items-center justify-start w-full">
               <div className="flex flex-col gap-12 items-center justify-start w-full">

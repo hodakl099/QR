@@ -7,6 +7,6 @@ export function fetchCategoriesByRestaurant(restaurantId) {
   return axios.get(`${API_URL}/restaurant//getRestaurant/${restaurantId}`);
 }
 
-export function fetchSubCategoriesByCategory(categoryId) {
+export function fetchSubCategoriesByCategory(categoryId,catName) {
   return axios.get(`${API_URL}/category/getSubCategories/${categoryId}`);
 }
