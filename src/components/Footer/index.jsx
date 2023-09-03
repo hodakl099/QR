@@ -1,7 +1,13 @@
-import React from "react";
 import { Button, Img, Text } from "components"; // Make sure to adjust this import path
+import { useTranslation } from "react-i18next";
 
 const Footer = (props) => {
+
+
+
+  const {t } = useTranslation();
+
+
   return (
     <>
       <style jsx>{`
@@ -20,16 +26,16 @@ const Footer = (props) => {
 
             <div className="flex flex-col items-start">
               <Text className="sm:text-[21px] md:text-[23px] text-[25px] text-red-400" size="txtPoppinsSemiBold25Red400">
-                Get in touch
+              {t('GetInTouch.touch')}
               </Text>
               <Text className="leading-[153.00%] mt-[10px] text-gray-300 text-xl" size="txtPoppinsRegular20Gray300">
-                Tajura, Algamodi street
+              {t('Location.location')}
               </Text>
               <Text className="mt-[10px] text-gray-300 text-xl" size="txtPoppinsRegular20Gray300">
-                caffebros@tajmedia.com
+                brosscaffe@tajmedia.com
               </Text>
               <Text className="mt-[10px] text-gray-300 text-xl" size="txtPoppinsRegular20Gray300">
-                218-924871520+
+                218-921000864+
               </Text>
             </div>
 
@@ -44,19 +50,23 @@ const Footer = (props) => {
             </div>
 
             <div className="flex flex-row gap-[30px] items-center flex-wrap pt-[30px]">
+              
+            <a href="https://instagram.com/bros_caffe?igshid=MzRlODBiNWFlZA==/" target="_blank" rel="noopener noreferrer">
   <Button className="bg-bluegray-100 flex h-[60px] items-center justify-center p-[15px] rounded-[50%] w-[60px]">
-    <Img className="h-[30px]" src="images/img_instagram.png" alt="Instagram" />
+    <Img className="h-[30px]" src={process.env.PUBLIC_URL + "/images/img_instagram.png"} alt="Instagram" />
   </Button>
+</a>
+<a href="https://www.facebook.com/brosscaffe?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
   <Button className="bg-bluegray-100 flex h-[60px] items-center justify-center p-[15px] rounded-[50%] w-[60px]">
-    <Img className="h-[30px]" src="images/img_facebook.png" alt="Facebook" />
+    <Img className="h-[30px]" src={process.env.PUBLIC_URL + "/images/img_facebook.png"} alt="Instagram" />
   </Button>
+</a>
+
+
+
+
 </div>
-
-
-         
-
           </div>
-
           <div className="flex flex-row items-center justify-center mt-10 w-full">
             <Text className="text-gray-301 text-xl pl-[10px]" size="txtPoppinsRegular20Gray301">2023</Text>
             <Text className="ml-[5px] text-gray-301 text-xl" size="txtPoppinsRegular20Gray301">TajMedia</Text>

@@ -66,18 +66,34 @@ const MenuPage = () => {
                 />
               }
             ></Button> */}
-             <Img
-              className="h-[51px] w-[12%]"
-              src="images/img_logo.svg"
-              alt="Logo"
-            />
+                   <div className="flex flex-row items-center">
+              <Text
+                className="bg-red-400 flex h-[51px] items-center justify-center rounded-[50%] sm:text-[21px] md:text-[23px] text-[25px] text-center text-white-A700 w-[51px]"
+                size="txtPoppinsSemiBold25WhiteA700"
+              >
+                B
+              </Text>
+              <Text
+                className="ml-[10px] text-lg text-white-A700"
+                size="txtPoppinsSemiBold18WhiteA700"
+              >
+                <span className="text-red-400 font-poppins text-left font-semibold">
+                  .
+                </span>
+                <span style={{ color: 'black' }} className="font-poppins text-left font-semibold">
+  Bross Caffe
+</span>
+
+              </Text>
+            </div>
           </div>
           <div className="flex flex-col font-opensans md:gap-10 gap-[79px] items-center justify-start w-full">
             <Text
               className="sm:text-[38px] md:text-[44px] text-[52px] text-gray-900"
               size="txtOpenSansRomanBold52"
             >
-              {t('Menu.menu')}
+              {/* {t('Menu.menu')} */}
+              MENU
             </Text>
             <div className="flex flex-col font-poppins gap-[50px] items-center justify-start w-full">
               <div className="flex flex-col gap-12 items-center justify-start w-full">

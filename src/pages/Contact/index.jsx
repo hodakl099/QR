@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const ContactPage = () => {
   const navigate = useNavigate();
 
-    
+
   const { t } = useTranslation();
 
   return (
@@ -35,6 +35,26 @@ const ContactPage = () => {
                 <Line className="bg-red-400 h-px w-[58%]" />
               </div>
             </div>
+            <div className="flex flex-row items-center">
+              <Text
+                className="bg-red-400 flex h-[51px] items-center justify-center rounded-[50%] sm:text-[21px] md:text-[23px] text-[25px] text-center text-white-A700 w-[51px]"
+                size="txtPoppinsSemiBold25WhiteA700"
+              >
+                B
+              </Text>
+              <Text
+                className="ml-[10px] text-lg text-white-A700"
+                size="txtPoppinsSemiBold18WhiteA700"
+              >
+                <span className="text-red-400 font-poppins text-left font-semibold">
+                  .
+                </span>
+                <span style={{ color: 'black' }} className="font-poppins text-left font-semibold">
+                  Bross Caffe
+                </span>
+
+              </Text>
+            </div>
             {/* <Button
               className="bg-white-A700 cursor-pointer flex h-[50px] items-center justify-center md:ml-[0] ml-[122px] rounded-[50%] w-[50px]"
               leftIcon={
@@ -45,25 +65,24 @@ const ContactPage = () => {
                 />
               }
             ></Button> */}
-            <Img
+            {/* <Img
               className="h-[51px] w-[12%]"
               src="images/img_logo.svg"
               alt="Logo"
-            />
+            /> */}
           </div>
           <div className="flex flex-col gap-[19px] items-center justify-start mt-[117px]">
             <Text
               className="md:text-5xl text-[80px] text-gray-900"
               size="txtOpenSansRomanBold80"
             >
-              Contact us
+              {t('Contact.contact')}
             </Text>
             <Text
               className="sm:text-[21px] md:text-[23px] text-[25px] text-center text-gray-801 w-full"
               size="txtPoppinsRegular25"
             >
-              We love hearing from our customers. Feel free to share your
-              experience or ask any questions you may have.
+              نحن نحب سماع من عملائنا. لا تتردد في مشاركة تجربتك أو طرح أي أسئلة قد تكون لديكم.
             </Text>
           </div>
           <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between mt-[50px] w-full">
@@ -77,45 +96,50 @@ const ContactPage = () => {
                 alt="location"
               />
             </div>
-            <div className="flex md:flex-1 flex-col gap-9 items-center justify-start w-[49%] md:w-full">
+            <div className="flex md:flex-1 flex-col gap-9 items-center justify-start w-[49%] md:w-full" dir="rtl">
               <div className="flex flex-col gap-6 items-center justify-start rounded-lg w-full">
                 <Input
-                  name="Firstname"
-                  placeholder="First name"
-                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-left w-full"
+                  name="الاسم"
+                  placeholder="الاسم"
+                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-right w-full"
                   wrapClassName="bg-white-A700 border border-gray-400 border-solid pl-6 pr-[35px] py-[17px] rounded-lg w-full"
                   type="text"
+                  style={{ direction: 'rtl' }}
                 ></Input>
+
                 <Input
-                  name="Lastname"
-                  placeholder="Last name"
-                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-left w-full"
+                  name="اللقب"
+                  placeholder="اللقب"
+                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-right w-full"
                   wrapClassName="bg-white-A700 border border-gray-400 border-solid pl-6 pr-[35px] py-[17px] rounded-lg w-full"
                   type="text"
+                  style={{ direction: 'rtl' }}
                 ></Input>
+            
                 <Input
-                  name="Emailaddress"
-                  placeholder="Email address"
-                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-left w-full"
+                  name="البريد الالكتروني"
+                  placeholder="البريد الالكتروني"
+                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-right w-full"
                   wrapClassName="bg-white-A700 border border-gray-400 border-solid pl-6 pr-[35px] py-[17px] rounded-lg w-full"
                   type="email"
+                  style={{ direction: 'rtl' }}
                 ></Input>
                 <Input
-                  name="Subject"
-                  placeholder="Subject"
-                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-left w-full"
+                  name="الموضوع "
+                  placeholder="الموضوع "
+                  className="p-0 placeholder:text-gray-500 sm:px-5 text-base text-gray-500 text-right w-full"
                   wrapClassName="bg-white-A700 border border-gray-400 border-solid pl-6 pr-[35px] py-4 rounded-lg w-full"
+                  style={{direction: 'rtl'}}
                 ></Input>
                 <TextArea
-                  className="bg-white-A700 border border-gray-400 border-solid leading-[normal] pb-[35px] pl-6 pr-[35px] pt-[30px] sm:px-5 rounded-lg text-base placeholder:text-gray-500 text-gray-500 text-left w-full"
-                  name="Massage"
-                  placeholder="Message"
-                  // name="Massage"
-                  // placeholder="Message"
+                  className="bg-white-A700 border border-gray-400 border-solid leading-[normal] pb-[35px] pl-6 pr-[35px] pt-[30px] sm:px-5 rounded-lg text-base placeholder:text-gray-500 text-gray-500 text-right w-full"
+                  name="الرسالة"
+                  placeholder="الرسالة"
+                  style={{direction: 'rtl'}}
                 ></TextArea>
               </div>
               <Button className="bg-red-400 cursor-pointer min-w-[540px] sm:min-w-full py-[26px] rounded-[12px] sm:text-[21px] md:text-[23px] text-[25px] text-center text-white-A700">
-                Submit
+              ارسل
               </Button>
             </div>
           </div>

@@ -1,12 +1,11 @@
 import React,{useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Img, Line, RatingBar, Text } from "components";
+import {Img, Line, RatingBar, Text } from "components";
 import Footer from "components/Footer";
 import { useTranslation } from 'react-i18next';
 import { SubCategory } from '../../models/models';
 import { fetchSubCategoriesByCategory } from "../../models/api";
 import { useParams } from 'react-router-dom';
-import { data } from "autoprefixer";
 
 const SubMenu = () => {
 
@@ -86,7 +85,7 @@ const SubMenu = () => {
                   .
                 </span>
                 <span style={{ color: 'black' }} className="font-poppins text-left font-semibold">
-  BrosCafe
+  Bross Caffe
 </span>
 
               </Text>

@@ -19,12 +19,18 @@ i18n
           Contact: {
             contact:  "Contact Us"
           },
-          Contact: {
+          Menu: {
             Menu:  "Our Popular Menu"
           },
           More: {
             more:  "See More."
           },
+          GetInTouch : {
+            touch: "Get in touch"
+          }, 
+          Location: {
+            location: "Taura, algamodi street"
+          }
         }
       },
      
@@ -36,13 +42,18 @@ i18n
           Contact: {
             contact: "تواصل معانا"
           },
-         
           Menu: {
             menu: "قائمتنا"
           },
           More: {
             more: "المزيد"
-          } 
+          },
+          GetInTouch: {
+            touch: "اتصل بنا"
+          },
+          Location: {
+            location: "تاجوراء جزيرة القمودي"
+          }
         }
       }
     }
