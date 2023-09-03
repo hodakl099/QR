@@ -50,7 +50,7 @@ const MenuPage = () => {
                 <Text
                   className="common-pointer text-base text-gray-900_cc"
                   size="txtOpenSansRomanRegular16Gray900cc"
-                  onClick={() => navigate("/submenu")}
+                  onClick={() => navigate("/contact")}
                 >
                   {t('Contact.contact')}
                 </Text>
@@ -111,7 +111,7 @@ const MenuPage = () => {
         <div className="flex flex-row gap-[10px] items-center justify-center mt-[30px] rounded-lg w-[95%] md:w-full">
           <Button
             className="common-pointer bg-red-400 cursor-pointer font-semibold min-w-[158px] py-[19px] rounded-lg text-base text-center text-white-A700"
-            onClick={() => navigate("/submenu/${category.id}")}
+            onClick={() => navigate(`/submenu/${category.id}`)}
           >
             {t('More.more')}
           </Button>

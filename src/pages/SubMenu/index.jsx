@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { SubCategory } from '../../models/models';
 import { fetchSubCategoriesByCategory } from "../../models/api";
 import { useParams } from 'react-router-dom';
+import { data } from "autoprefixer";
 
 const SubMenu = () => {
 
@@ -17,11 +18,16 @@ const SubMenu = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
+
+    console.log('Category ID :',categoryId);
     const fetchData = async () => {
       try {
         const response = await fetchSubCategoriesByCategory(categoryId);
         // Map the response to your model (if you are using one)
-        setSubCategories(response.data);
+      const data =  response.data.map(
+          subCat => new SubCategory(subCat.id,subCat.name,subCat.imageUrl,subCat.objectName,subCat.categoryId,subCat.price)
+        )
+        setSubCategories(data)
       } catch (error) {
         console.error('An error occurred while fetching data:', error);
       }
@@ -83,7 +89,7 @@ const SubMenu = () => {
                 <div className="flex flex-col items-center justify-start rounded-[40px] w-full">
                   <div className="md:gap-5 gap-[35px] grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
                   {subCategories.map((subCategory) => (
-    <div className="bg-white-A700 flex flex-1 flex-col gap-6 items-center justify-center p-[30px] sm:px-5 rounded-[40px] w-full" key={subCategories.id}>
+    <div className="bg-white-A700 flex flex-1 flex-col gap-6 items-center justify-center p-[30px] sm:px-5 rounded-[40px] w-full" key={subCategory.id}>
       <Img
         className="h-[270px] md:h-auto mt-1.5 object-cover w-[270px]"
         src={subCategory.imageUrl}
