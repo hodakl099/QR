@@ -69,11 +69,26 @@ const SubMenu = () => {
                 />
               }
             ></Button> */}
-             <Img
-              className="h-[51px] w-[12%]"
-              src="images/img_logo.svg"
-              alt="Logo"
-            />
+              <div className="flex flex-row items-center">
+              <Text
+                className="bg-red-400 flex h-[51px] items-center justify-center rounded-[50%] sm:text-[21px] md:text-[23px] text-[25px] text-center text-white-A700 w-[51px]"
+                size="txtPoppinsSemiBold25WhiteA700"
+              >
+                B
+              </Text>
+              <Text
+                className="ml-[10px] text-lg text-white-A700"
+                size="txtPoppinsSemiBold18WhiteA700"
+              >
+                <span className="text-red-400 font-poppins text-left font-semibold">
+                  .
+                </span>
+                <span style={{ color: 'black' }} className="font-poppins text-left font-semibold">
+  BrosCafe
+</span>
+
+              </Text>
+            </div>
           </div>
           <div className="flex flex-col font-opensans md:gap-10 gap-[79px] items-center justify-start w-full">
             <Text
@@ -99,9 +114,18 @@ const SubMenu = () => {
             className="text-3xl sm:text-[26px] md:text-[28px] text-gray-900"
             size="txtPoppinsSemiBold30"
           >
-            {subCategory.name + subCategory.price}
+            {subCategory.name}
           </Text>
         </div>
+
+        <div className="flex flex-col gap-[18px] items-center justify-start w-full">
+  <Text
+    className="text-3xl sm:text-[26px] md:text-[28px] text-gray-900 pt-[10px]" 
+    size="txtPoppinsSemiBold30"
+  >
+    {subCategory.price} د.ل  
+  </Text>
+</div>
         <div className="flex flex-row items-center justify-center mt-3.5 rounded-[1.76px] w-[49%] md:w-full">
           <RatingBar
             className="flex justify-between w-[140px]"
@@ -110,14 +134,6 @@ const SubMenu = () => {
             activeColor="#f54748"
             size={24}
           />
-        </div>
-        <div className="flex flex-row gap-[10px] items-center justify-center mt-[30px] rounded-lg w-[95%] md:w-full">
-          <Button
-            className="common-pointer bg-red-400 cursor-pointer font-semibold min-w-[158px] py-[19px] rounded-lg text-base text-center text-white-A700"
-            onClick={() => navigate("/checkout")}
-          >
-            {t('More.more')}
-          </Button>
         </div>
       </div>
     </div>
