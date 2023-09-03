@@ -9,6 +9,7 @@ const ContactPage = () => {
 
 
   const { t } = useTranslation();
+  
 
   return (
     <>
@@ -86,16 +87,13 @@ const ContactPage = () => {
             </Text>
           </div>
           <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between mt-[50px] w-full">
-            <div
-              className="bg-cover bg-no-repeat h-[550px] md:h-[60px] p-[215px] md:px-10 sm:px-5 relative rounded-[24px] w-[48%] md:w-full"
-              style={{ backgroundImage: "url('images/img_map.png')" }}
-            >
-              <Img
-                className="absolute bottom-[39%] h-[60px] inset-x-[0] mx-auto w-[9%]"
-                src="images/img_location.svg"
-                alt="location"
-              />
-            </div>
+          <a href="https://www.google.com/maps?q=32.88146794650721,13.362318189037884" target="_blank" rel="noopener noreferrer">
+  <div
+    className="bg-cover bg-no-repeat h-[550px] md:h-[60px] p-[215px] md:px-10 sm:px-5 relative rounded-[24px] w-[48%] md:w-full"
+    style={{ backgroundImage: "url('images/cafe_location.png')" }}
+  >
+  </div>
+</a>
             <div className="flex md:flex-1 flex-col gap-9 items-center justify-start w-[49%] md:w-full" dir="rtl">
               <div className="flex flex-col gap-6 items-center justify-start rounded-lg w-full">
                 <Input
