@@ -44,7 +44,9 @@ const SubMenu = () => {
                 <Text
                   className="text-base text-red-400"
                   size="txtOpenSansRomanRegular16Red400"
+                  onClick={() => navigate("/")}
                 >
+
                     {t('Home.home')}
                 </Text>
                 <Line className="bg-red-400 h-px w-full" />
